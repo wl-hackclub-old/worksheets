@@ -1,4 +1,7 @@
-\documentclass[12pt,letterpaper]{article}
+\documentclass[12pt,letterpaper,fleqn]{article}
+
+\usepackage{amsmath}
+\usepackage{cancel}
 
 \begin{document}
 
@@ -18,30 +21,27 @@ A \textbf{bit} is a \textbf{bi}nary digi\textbf{t}.
 
 \begin{enumerate}
 
-\item Convert $5250_{10}$ to hexadecimal.
-
-\item Convert $2036_{10}$ to binary.
-
-\item Convert $15\textrm{F}_{16}$ to octal.
+\item Convert $15\text{F}_{16}$ to octal.
 
 \item Convert $101000100011_2$ to hexadecimal.
 
-\item Evaluate $21\textrm{A}7_{16} - 110_{16}$ in hexadecimal.
+\item Evaluate $21\text{A}7_{16} - 110_{16}$ in hexadecimal.
 
 \item Evaluate $10531_8 + 12414_8$ in octal.
 
 \item Evaluate $1101111_2 - 111011_2$ in binary.
 
-\item Evaluate $3\textrm{C}0_{16} + 340_8$ in hexadecimal.
+\item Evaluate $3\text{C}0_{16} + 340_8$ in hexadecimal.
 
   %% This should be replaced with a non-packet problem in the future.
-\item In the ACSL computer, each ``word'' of memory
-  contains 20 bits representing 3 pieces of information.
-  The most significant 6 bits represent Field A; the next
-  11 bits, Field B; and the last 3 bits represent Field C.
-  For example, the 20 bits comprising the ``word''
-  $18149_{16}$ has fields with values of $6_{16}$, $29_{16}$,
-  and $1_{16}$. What is Field B in $\textrm{E}1\textrm{B}7\textrm{D}_{16}$? (Express your answer as
+\item In the Technology Department's new computer, each ``word'' of memory
+  contains 16 bits representing 4 pieces of information.
+  The first 5 bits represent Field A; the next
+  3 bits, Field B; the next 3 bits, Field C;
+  and the last 5 bits, Field D.
+  For example, the 16 bits comprising the ``word''
+  $9699_{16}$ has fields with values of $19_{16}$, $4_{16}$,
+  $6_{16}$, and $\text{A}_{16}$. What is Field C in $6\text{FAC}_{16}$? (Express your answer as
   a base 16 number.)
 
 \end{enumerate}
@@ -50,26 +50,71 @@ A \textbf{bit} is a \textbf{bi}nary digi\textbf{t}.
 
 \noindent \textbf{Answers}
 
-%% How these answers are retrieved should be explained.
 \begin{enumerate}
 
-\item $1482_{16}$
+\item \begin{align*}
+  15\text{F}_{16} &= 0001\ 0101\ 1111_2 \\
+  &= 101\ 011\ 111_2 \\
+  &= 537_8
+\end{align*}
+  
+\item \begin{align*}
+  101000100011_2 &= 1010\ 0010\ 0011_2 \\
+  &= \text{A}23_{16}
+\end{align*}
 
-\item $11111110100_2$
+\item \begin{alignat*}{5}
+  & 2 & 1 & \text{A} & 7 \\
+  - & & 1 & 1 & 0 \\[-1.2em]
+  \cline{2-5} \\[-2em]
+  & 2 & 0 & 9 & 7
+\end{alignat*}
 
-\item $537_8$
+\item \begin{alignat*}{6}
+  & & \text{\scriptsize 1} & & & \\[-0.5em]
+  & 1 & 0 & 5 & 3 & 1 \\
+  + & 1 & 2 & 4 & 1 & 4 \\[-1.2em]
+  \cline{2-6} \\[-2em]
+  & 2 & 3 & 1 & 4 & 5
+\end{alignat*}
 
-\item $\textrm{A}23_{16}$
+\item \begin{alignat*}{8}
+  & & \text{\tiny \textsuperscript{1}0} & & & & & \\[-0.5em]
+  & \cancel{1} & \cancel{1} & ^{\text{\tiny 1}}0 & 1 & 1 & 1 & 1 \\
+  - & & 1 & \hspace{2pt} 1 & 1 & 0 & 1 & 1 \\[-1.2em]
+  \cline{2-8} \\[-2em]
+  & & 1 & \hspace{2pt} 1 & 0 & 1 & 0 & 0
+\end{alignat*}
 
-\item $2097_{16}$
+\item \begin{align*}
+  3\text{C}0_{16} &= 0011\ 1100\ 0000_2
+\end{align*}
 
-\item $23145_{8}$
+  \begin{align*}
+    340_8 &= 011\ 100\ 000_2
+  \end{align*}
 
-\item $110100_2$
+  \begin{alignat*}{12}
+    & \text{\scriptsize 1} & \text{\scriptsize 1} & \text{\scriptsize 1} & \text{\scriptsize 1} & & & & & & & \\
+    & & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    + & & & & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 \\[-1.2em]
+    \cline{2-11} \\[-2em]
+    & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0
+  \end{alignat*}
 
-\item $2240_8$
+\item \begin{align*}
+  6\text{FAC}_{16} &= 0110\ 1111\ 1010\ 1100_2 \\
+  &= 01101\ 111\ 101\ 01100
+\end{align*}
 
-\item $36\textrm{F}_{16}$
+  so
+
+  \begin{align*}
+    \text{Field A} &= \text{D}_{16} \\
+    \textbf{Field B} &= 7_{16} \\
+    \text{Field C} &= 5_{16} \\
+    \text{Field D} &= \text{C}_{16}
+  \end{align*}
 
 \end{enumerate}
 
