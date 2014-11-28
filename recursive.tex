@@ -22,4 +22,125 @@ An example of a definition of a recursive function is
   \end{cases}
 \end{align*}
 
+\noindent \textbf{Questions}
+
+\begin{enumerate}
+
+\item Consider the following recursive algorithm for painting a rectangle:
+  
+  \begin{enumerate}
+
+  \item Given a rectangle.
+
+  \item If the width of the rectangle is less than 1 foot, then stop.
+
+  \item Divide the rectangle into 4 equal area rectangles by keeping the height consistent and splitting at the width.
+    For example, if a rectangle of dimensions 10x3 was being painted, the four rectangles created would have dimensions 2.5x3.
+
+  \item Paint two of these new rectangles.
+
+  \item Repeat this procedure (start at step 1) for the two unpainted rectangles.
+
+  \end{enumerate}
+
+  How many square feet will be painted when this algorithm is applied to a rectangle of dimensions 24x12 feet?
+
+\item Evaluate $f(8)$, given
+
+  \begin{align*}
+    f(x) =
+    \begin{cases}
+      f(x + 5) & \text{when}\ x < 20 \\
+      2(f(x - 1)) + 3 & \text{when}\ x > 20 \\
+      x + 2 & \text{when}\ x = 20
+    \end{cases}
+  \end{align*}
+
+\item Evaluate $f(22)$, given
+
+  \begin{align*}
+    f(x) =
+    \begin{cases}
+      f(2x - 5) / 2 & \text{when}\ x < 100 \\
+      x^2 - x & \text{otherwise}
+    \end{cases}
+  \end{align*}
+
+\item Evaluate $f(14, 7)$, given
+
+  \begin{align*}
+    f(x, y) =
+    \begin{cases}
+      f(x - 3, y - 1) & \text{when}\ x > y \\
+      x + y & \text{otherwise}
+    \end{cases}
+  \end{align*}
+
+\item Evaluate $f(20, 13)$ given
+
+  \begin{align*}
+    f(x, y) =
+    \begin{cases}
+      f(x - 3, 2y - x + 5) + 3 & \text{when}\ x > y \\
+      2x - y & \text{otherwise}
+    \end{cases}
+  \end{align*}
+
+\end{enumerate}
+
+\pagebreak
+
+\noindent \textbf{Answers}
+
+\begin{enumerate}
+
+  %% Consider using a shape.
+  %% It would be a fun way to show this!
+\item Four rectangles of dimensions 6x12 feet are created.
+  Two are painted, and two remain.
+  These two yield rectangles of dimensions 1.5x12 feet.
+  Since eight rectangles of this dimension are created, four will be painted.
+  The next rectangles created will have width of 0.375 feet, so none of them will be painted.
+
+  Therefore, the total square feet is $2(6\times 12) + 4(1.5\times 12) = 216$ square feet.
+
+\item \begin{align*}
+  f(8) &= f(13) \\
+  &= f(18) \\
+  &= f(23) \\
+  &= 2(f(22)) + 3 \\
+  &= 2(2(f(21)) + 3) + 3 \\
+  &= 2(2(2(f(20)) + 3) + 3) + 3 \\
+  &= 2(2(2(22) + 3) + 3) + 3 \\
+  &= 2(2(47) + 3) + 3 \\
+  &= 2(97) + 3 \\
+  &= 197
+\end{align*}
+
+\item \begin{align*}
+  f(22) &= f(39) / 2 \\
+  &= (f(73) / 2) / 2 \\
+  &= ((f(141) / 2) / 2) / 2 \\
+  &= ((19740 / 2) / 2) / 2 \\
+  &= 2467.5
+\end{align*}
+
+\item \begin{align*}
+  f(14, 7) &= f(11, 6) \\
+  &= f(8, 5) \\
+  &= f(5, 4) \\
+  &= f(2, 3) \\
+  &= 5
+\end{align*}
+
+\item \begin{align*}
+  f(20, 13) &= f(17, 11) + 3 \\
+  &= (f(14, 10) + 3) + 3 \\
+  &= ((f(11, 11) + 3) + 3) + 3 \\
+  &= ((11 + 3) + 3) + 3 \\
+  &= 20
+\end{align*}
+
+\end{enumerate}
+
 \end{document}
