@@ -1,4 +1,6 @@
-\documentclass[12pt,letterpaper]{article}
+\documentclass[12pt,letterpaper,fleqn]{article}
+
+\usepackage{amsmath}
 
 \begin{document}
 
@@ -7,5 +9,35 @@
 
   Created by Sam Craig for the West Lafayette High School ACSL Club of 2014--2015
 \end{center}
+
+In prefix, the operator comes before the operands; infix between; and postfix after.
+Only infix has parentheses, as the operator will always only have two operands in the other two notations.
+$\uparrow$ designates an exponent such that $e^x$ in prefix is $\uparrow e\ x$.
+Convert square and n-th roots $\sqrt[n]{x}$ to, in prefix, $\uparrow x\ /\ 1\ n$.
+
+\bigskip
+\noindent \textbf{Questions}
+
+\begin{enumerate}
+
+\item Translate the following equation into prefix.
+  \[
+  E = mc^2
+  \]
+
+\end{enumerate}
+
+\pagebreak
+\noindent \textbf{Answers}
+
+\begin{enumerate}
+
+\item \begin{align*}
+  E = mc^2 &\rightarrow (E = (m \times (c \uparrow 2))) \\
+  &\rightarrow (= E\ (\times\ m\ (\uparrow c\ 2))) \\
+  &\rightarrow\ = E \times m \uparrow c\ 2
+\end{align*}
+
+\end{enumerate}
 
 \end{document}
