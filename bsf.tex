@@ -7,13 +7,13 @@
 \begin{center}
   Bit-String Flicking Worksheet
 
-  Created by Sam Mercier for the West Lafayette High School ACSL Club of 2014--2015
+  Created by Sam Mercier and Sam Craig for the West Lafayette High School ACSL Club of 2014--2015
 \end{center}
 
 There are four fundemental bit string operators that are incredibly common. They are \textbf{AND}, \textbf{OR}, \textbf{XOR}, and \textbf{NOT}. The first three are operators that take \textbf{two} operands. The last one, \textbf{NOT}, takes \textbf{ONE} operand. The operand can be a single bit, or it can be a bit-string. If it is a bit string you apply the operation to each bit going from \textbf{right to left}. You might be wondering now what exactly these operators do. We show this via something we call a truth table. It is just a set of example cases that show you what the output would be in every possible case. Here are their truth tables:
 
 \begin{center}
-  \begin{tabular}{ l | l || r | r | r | r}
+  \begin{tabular}{| l | l || r | r | r | r |}
     \hline
     p & q & p \textbf{AND} q & p \textbf{OR} q & p \textbf{XOR} q & \textbf{NOT} p \\
     \hline \hline
@@ -25,12 +25,26 @@ There are four fundemental bit string operators that are incredibly common. They
   \end{tabular}
 \end{center}
 
-There is another set of operators. These are called the \textbf{shift operators} because they shift around a \textbf{bit-string}. There are two main groups of these operators. There are the \textbf{logical shift operators} which contains the operator \textbf{LSHIFT-n} and \textbf{RSHIFT-n}, and then there are the \textbf{circular shift operators} which contains the operators \textbf{LCIRC-n} and \textbf{RCIRC-n}. These operators have \textbf{two} operands. The first one is an \textbf{integer} which is attached to the operator by a ``-''. This indicates the number of times to do the operation. The second operand comes after the operator also and is separated by a space. This operand is the \textbf{bit-string} to be operated on.
+There is another set of operators.
+These are called the \textbf{shift operators} because they shift around a \textbf{bit-string}.
+There are two main groups of these operators.
+There are the \textbf{logical shift operators} which contains the operator \textbf{LSHIFT-n} and \textbf{RSHIFT-n}, and then there are the \textbf{circular shift operators} which contains the operators \textbf{LCIRC-n} and \textbf{RCIRC-n}.
+These operators have \textbf{two} operands.
+The first one is an \textbf{integer} which is attached to the operator by a hyphen (-).
+This indicates the number of times to do the operation.
+The second operand comes after the operator also and is separated by a space.
+This operand is the \textbf{bit-string} to be operated on.
 
-It is probably not surprising that these operators shift the bits around. The question is how do they shift them around. Well the logical shift operators are a pure shift in that the bits that are moved outside of the string are lost, and extra empty spaces are filled with zeros. The CIRC shifts circulates the bits around. So bits that leave from the right side come back on the left side. This sounds much more complicated probably than it actually is so let me just demonstrate. In this table the \textbf{n} is always going to be 2 so that we can focus on how each operator effects the bit-string.
+It is probably not surprising that these operators shift the bits around.
+The question is how do they shift them around.
+Well the logical shift operators are a pure shift in that the bits that are moved outside of the string are lost, and extra empty spaces are filled with zeros.
+The CIRC shifts circulates the bits around.
+So bits that leave from the right side come back on the left side.
+This sounds much more complicated probably than it actually is so let me just demonstrate.
+In this table the \textbf{n} is always going to be 2 so that we can focus on how each operator effects the bit-string.
 
 \begin{center}
-  \begin{tabular}{ l || r | r | r | r}
+  \begin{tabular}{| l || r | r | r | r |}
     \hline
     p & \textbf{LSHIFT-2} p & \textbf{RSHIFT-2} p & \textbf{LCIRC-2} p & \textbf{RSHIFT-2} \\
     \hline \hline
