@@ -67,8 +67,12 @@ In this table the \textbf{n} is always going to be 2 so that we can focus on how
 \noindent \textbf{Questions}
 \begin{enumerate}
 \item Find the final bit-string after the following operations:
-  
+
   \texttt{(NOT (LCIRC-3 (RSHIFT-2 (10011 XOR 10111))))}
+
+\item Find the final bit-string after the following operations:
+
+  \texttt{(10011 AND (RSHIFT-3 00111))}
 
 \end{enumerate}
 
@@ -83,6 +87,12 @@ In this table the \textbf{n} is always going to be 2 so that we can focus on how
   \rightarrow& \texttt{(NOT (LCIRC-3 (00001)))} \\
   \rightarrow& \texttt{(NOT (01000))} \\
   \rightarrow& \texttt{(10111)} \\
+\end{align*}
+
+\item \begin{align*}
+  & \texttt{(10011 AND (RSHIFT-3 00111))} \\
+  \rightarrow& \texttt{(10011 AND 00000)} \\
+  \rightarrow& \texttt{(00000)} \\
 \end{align*}
 
 \end{enumerate}
