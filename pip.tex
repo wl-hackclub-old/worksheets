@@ -13,6 +13,7 @@
 In prefix, the operator comes before the operands; infix between; and postfix after.
 Only infix has parentheses, as the operator will always only have two operands in the other two notations.
 $\uparrow$ designates an exponent such that $e^x$ in prefix is $\uparrow e\ x$.
+Use asterisks (*) instead of times signs ($\times$) when using prefix or postfix.
 Convert square and n-th roots $\sqrt[n]{x}$ to, in prefix, $\uparrow x\ /\ 1\ n$.
 ACSL will probably not have a problem on their test including a square root.
 
@@ -31,6 +32,16 @@ ACSL will probably not have a problem on their test including a square root.
   x = \frac{\sqrt{b^2 - 4ac} - b}{2a}
   \]
 
+\item Translate the following prefix expression into infix.
+  \[
+  +\ A - B \uparrow C\ D
+  \]
+
+\item Evaluate the following postfix expression with $A = 5, B = 10, C = 15$.
+  \[
+  A\ A\ B + C\ A\ B\ / - /\ *
+  \]
+
 \end{enumerate}
 
 \pagebreak
@@ -42,7 +53,8 @@ ACSL will probably not have a problem on their test including a square root.
   E = mc^2 &\rightarrow (E = (m \times (c^2))) \\
   &\rightarrow (E = (m \times (c \uparrow 2))) \\
   &\rightarrow (= E\ (\times\ m\ (\uparrow c\ 2))) \\
-  &\rightarrow\ = E \times m \uparrow c\ 2
+  &\rightarrow\ = E \times m \uparrow c\ 2 \\
+  &\rightarrow\ = E * m \uparrow c\ 2
 \end{align*}
 
 \item \begin{align*}
@@ -51,7 +63,14 @@ ACSL will probably not have a problem on their test including a square root.
   &\rightarrow (x = (((((b \uparrow 2) - (4ac)) \uparrow (1/2)) - b) / (2a))) \\
   &\rightarrow (x = (((((b \uparrow 2) - (4 \times a \times c)) \uparrow (1/2)) - b) / (2 \times a))) \\
   &\rightarrow (x\ (((((b\ 2 \uparrow) (4\ a \times c\ \times)\ -) (1\ 2\ /) \uparrow)\ b\ -) (2\ a\ \times)\ /) =) \\
-  &\rightarrow x\ b\ 2 \uparrow 4\ a \times c\ \times -\ 1\ 2\ / \uparrow\ b\ - 2\ a\ \times\ / =
+  &\rightarrow x\ b\ 2 \uparrow 4\ a \times c\ \times -\ 1\ 2\ / \uparrow\ b\ - 2\ a\ \times\ / = \\
+  &\rightarrow x\ b\ 2 \uparrow 4\ a * c\ * -\ 1\ 2\ / \uparrow\ b\ - 2\ a\ *\ /
+\end{align*}
+
+\item \begin{align*}
+  +\ A - B \uparrow C\ D &\rightarrow (+\ A\ (-\ B\ (\uparrow C\ D))) \\
+  &\rightarrow (A + (B - (C \uparrow D))) \\
+  &\rightarrow A + B - C^D
 \end{align*}
 
 \end{enumerate}
