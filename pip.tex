@@ -1,8 +1,6 @@
 \documentclass[12pt,letterpaper,fleqn]{article}
 
 \usepackage{amsmath}
-\usepackage{mathastext}
-\MTfamily{\ttdefault}\Mathastext
 
 \begin{document}
 
@@ -16,6 +14,7 @@ In prefix, the operator comes before the operands; infix between; and postfix af
 Only infix has parentheses, as the operator will always only have two operands in the other two notations.
 $\uparrow$ designates an exponent such that $e^x$ in prefix is $\uparrow e\ x$.
 Convert square and n-th roots $\sqrt[n]{x}$ to, in prefix, $\uparrow x\ /\ 1\ n$.
+ACSL will probably not have a problem on their test including a square root.
 
 \bigskip
 \noindent \textbf{Questions}
@@ -27,6 +26,11 @@ Convert square and n-th roots $\sqrt[n]{x}$ to, in prefix, $\uparrow x\ /\ 1\ n$
   E = mc^2
   \]
 
+\item Translate the following equation into postfix.
+  \[
+  x = \frac{\sqrt{b^2 - 4ac} - b}{2a}
+  \]
+
 \end{enumerate}
 
 \pagebreak
@@ -35,9 +39,19 @@ Convert square and n-th roots $\sqrt[n]{x}$ to, in prefix, $\uparrow x\ /\ 1\ n$
 \begin{enumerate}
 
 \item \begin{align*}
-  E = mc^2 &\rightarrow (E = (m \times (c \uparrow 2))) \\
+  E = mc^2 &\rightarrow (E = (m \times (c^2))) \\
+  &\rightarrow (E = (m \times (c \uparrow 2))) \\
   &\rightarrow (= E\ (\times\ m\ (\uparrow c\ 2))) \\
   &\rightarrow\ = E \times m \uparrow c\ 2
+\end{align*}
+
+\item \begin{align*}
+  x = \frac{\sqrt{b^2 - 4ac} - b}{2a} &\rightarrow \left(x = \left(\frac{\left(\left(\sqrt{((b^2) - (4ac))}\right) - b\right)}{(2a)}\right)\right) \\
+  &\rightarrow \left(x = \left(\frac{\left(\left(((b \uparrow 2) - (4ac)) \uparrow (1/2) \right) - b\right)}{(2a)}\right)\right) \\
+  &\rightarrow (x = (((((b \uparrow 2) - (4ac)) \uparrow (1/2)) - b) / (2a))) \\
+  &\rightarrow (x = (((((b \uparrow 2) - (4 \times a \times c)) \uparrow (1/2)) - b) / (2 \times a))) \\
+  &\rightarrow (x\ (((((b\ 2 \uparrow) (4\ a \times c\ \times)\ -) (1\ 2\ /) \uparrow)\ b\ -) (2\ a\ \times)\ /) =) \\
+  &\rightarrow x\ b\ 2 \uparrow 4\ a \times c\ \times -\ 1\ 2\ / \uparrow\ b\ - 2\ a\ \times\ / =
 \end{align*}
 
 \end{enumerate}
