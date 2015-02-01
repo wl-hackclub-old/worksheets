@@ -37,9 +37,9 @@ ACSL will probably not have a problem on their test including a square root.
   +\ A - B \uparrow C\ D
   \]
 
-\item Evaluate the following postfix expression with $A = 5, B = 10, C = 15$.
+\item Evaluate the following postfix expression with $A = 10, B = 5, C = 15$.
   \[
-  A\ A\ B + C\ A\ B\ / - /\ *
+  A\ A\ B + C\ A\ B\ / - +\ *
   \]
 
 \end{enumerate}
@@ -62,7 +62,7 @@ ACSL will probably not have a problem on their test including a square root.
   &\rightarrow \left(x = \left(\frac{\left(\left(((b \uparrow 2) - (4ac)) \uparrow (1/2) \right) - b\right)}{(2a)}\right)\right) \\
   &\rightarrow (x = (((((b \uparrow 2) - (4ac)) \uparrow (1/2)) - b) / (2a))) \\
   &\rightarrow (x = (((((b \uparrow 2) - (4 \times a \times c)) \uparrow (1/2)) - b) / (2 \times a))) \\
-  &\rightarrow (x\ (((((b\ 2 \uparrow) (4\ a \times c\ \times)\ -) (1\ 2\ /) \uparrow)\ b\ -) (2\ a\ \times)\ /) =) \\
+  &\rightarrow (x\ (((((b\ 2 \uparrow)\ (4\ a \times c\ \times)\ -)\ (1\ 2\ /) \uparrow)\ b\ -)\ (2\ a\ \times)\ /) =) \\
   &\rightarrow x\ b\ 2 \uparrow 4\ a \times c\ \times -\ 1\ 2\ / \uparrow\ b\ - 2\ a\ \times\ / = \\
   &\rightarrow x\ b\ 2 \uparrow 4\ a * c\ * -\ 1\ 2\ / \uparrow\ b\ - 2\ a\ *\ /
 \end{align*}
@@ -71,6 +71,15 @@ ACSL will probably not have a problem on their test including a square root.
   +\ A - B \uparrow C\ D &\rightarrow (+\ A\ (-\ B\ (\uparrow C\ D))) \\
   &\rightarrow (A + (B - (C \uparrow D))) \\
   &\rightarrow A + B - C^D
+\end{align*}
+
+\item \begin{align*}
+  A\ A\ B + C\ A\ B\ / - +\ * &\rightarrow (A\ ((A\ B\ +)\ (C\ (A\ B\ /)\ -)\ +)\ *) \\
+  &\rightarrow (10\ ((10\ 5\ +)\ (15\ (10\ 5\ /)\ -)\ +)\ *) \\
+  &\rightarrow (10\ (15\ (15\ 2\ -)\ +)\ *) \\
+  &\rightarrow (10\ (15\ 13\ +)\ *) \\
+  &\rightarrow (10\ 28\ *) \\
+  &\rightarrow 280
 \end{align*}
 
 \end{enumerate}
