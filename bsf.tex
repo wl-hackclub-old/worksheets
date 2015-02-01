@@ -92,11 +92,13 @@ In this table the \textbf{n} is always going to be 2 so that we can focus on how
   \end{tabbing}
 \end{alltt}
 
-\item \begin{align*}
-  & \texttt{(10011 AND (RSHIFT-3 00111))} \\
-  \rightarrow& \texttt{(10011 AND 00000)} \\
-  \rightarrow& \texttt{(00000)} \\
-\end{align*}
+\item \begin{alltt}
+  \begin{tabbing}
+    \hphantom{\(\rightarrow\)}\= (10011 AND (RSHIFT-3 00111)) \\
+    \(\rightarrow\)\> (10011 AND 00000) \\
+    \(\rightarrow\)\> 00000 \\
+  \end{tabbing}
+\end{alltt}
 
 \end{enumerate}
 
