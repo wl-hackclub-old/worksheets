@@ -1,11 +1,87 @@
 \documentclass[12pt,letterpaper]{article}
 
+\usepackage{amsmath}
+
 \begin{document}
 
 \begin{center}
   LISP Programming Worksheet
 
-  Created by Sam Craig for the West Lafayette High School ACSL Club of 2014--2015
+  Created by Christopher Cooper and Sam Craig for the West Lafayette High School ACSL Club of 2014--2015
 \end{center}
+
+\textbf{You may not need to know all of this material for the next contest!}
+Problems 1 and 2 are representative of problems you may see on contest \#2.
+Problems 3 through 5 are representative of problems you may see on contest \#4.
+
+\bigskip
+\noindent \textbf{Questions}
+
+Evaluate the following LISP code.
+
+\begin{enumerate}
+
+\item
+\begin{verbatim}
+(DIV 24 (SUB 2 5))
+\end{verbatim}
+
+\item
+\begin{verbatim}
+(ADD (MULT 48 40)
+     (SUB (SQUARE 9) 1)
+     (MULT 3 5))
+\end{verbatim}
+
+\item
+\begin{verbatim}
+(SETQ a 'hello)
+(ATOM a)
+\end{verbatim}
+
+\item
+\begin{verbatim}
+(SETQ b '((what) is a list "?"))
+(CONS (CAR b) (CDR b))
+(SETQ (CAR b) (CAR (CAR b)))
+\end{verbatim}
+
+\item
+\begin{verbatim}
+(SET 'c '(21 22 23 50))
+(SETQ (CDR (CDR c)) (CONS 33 NIL))
+(REVERSE c)
+\end{verbatim}
+
+\end{enumerate}
+
+\pagebreak
+
+\noindent \textbf{Answers}
+
+\begin{enumerate}
+
+\item
+\begin{verbatim}
+(DIV 24 -3)
+-8
+\end{verbatim}
+
+\item ~ %% \vspace{-20pt}
+  \\ \begin{tabular}{p{5in}}
+\begin{verbatim}
+(ADD (MULT 48 40) (SUB 81 1) (MULT 3 5))
+(ADD 1920 80 15)
+2015
+\end{verbatim}
+\end{tabular}
+
+\item ~ %% \vspace{-10pt}
+  \\ \begin{tabular}{l l}
+\texttt{(SETQ a 'hello)} & Set variable \texttt{a} to symbol \texttt{hello}. \\
+\texttt{(ATOM a)}        & Returns true, since \texttt{a} is not a list.
+  \end{tabular}
+  
+\end{enumerate}
 
 \end{document}
