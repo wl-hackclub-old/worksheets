@@ -66,7 +66,9 @@ In this table the \textbf{n} is always going to be 2 so that we can focus on how
 
 \bigskip
 \noindent \textbf{Questions}
+
 \begin{enumerate}
+  
 \item Find the final bit-string after the following operations:
 
   \texttt{(NOT (LCIRC-3 (RSHIFT-2 (10011 XOR 10111))))}
@@ -74,6 +76,18 @@ In this table the \textbf{n} is always going to be 2 so that we can focus on how
 \item Find the final bit-string after the following operations:
 
   \texttt{(10011 AND (RSHIFT-3 00111))}
+
+\item Find the final bit-string after the following operations:
+
+  \texttt{((LCIRC-4 (10110 OR 11010)) XOR 10111)}
+
+\item Find all values of $x$ that solve the following equation:
+
+  \texttt{((LCIRC-2 x) AND 11011) = 01100}
+
+\item Find the final bit-string after the following operations:
+
+  \texttt{(00010 OR 10111 AND 11100)}
 
 \end{enumerate}
 
@@ -88,7 +102,7 @@ In this table the \textbf{n} is always going to be 2 so that we can focus on how
     \(\rightarrow\)\> (NOT (LCIRC-3 (RSHIFT-2 (00100)))) \\
     \(\rightarrow\)\> (NOT (LCIRC-3 (00001))) \\
     \(\rightarrow\)\> (NOT (01000)) \\
-    \(\rightarrow\)\> 10111 \\
+    \(\rightarrow\)\> 10111
   \end{tabbing}
 \end{alltt}
 
@@ -96,7 +110,34 @@ In this table the \textbf{n} is always going to be 2 so that we can focus on how
   \begin{tabbing}
     \hphantom{\(\rightarrow\)}\= (10011 AND (RSHIFT-3 00111)) \\
     \(\rightarrow\)\> (10011 AND 00000) \\
-    \(\rightarrow\)\> 00000 \\
+    \(\rightarrow\)\> 00000
+  \end{tabbing}
+\end{alltt}
+
+\item \begin{alltt}
+  \begin{tabbing}
+    \hphantom{\(\rightarrow\)}\= ((LCIRC-4 (10110 OR 11010)) XOR 10111) \\
+    \(\rightarrow\)\> ((LCIRC-4 11110) XOR 10111) \\
+    \(\rightarrow\)\> (01111 XOR 10111) \\
+    \(\rightarrow\)\> 11000
+  \end{tabbing}
+\end{alltt}
+
+\item \begin{alltt}
+  \begin{tabbing}
+    \hphantom{\(\rightarrow\)}\= ((LCIRC-2 x) AND 11011) = 01100 \\
+    \(\rightarrow\)\> ((LCIRC-2 abcde) AND 11011) = 01100 \\
+    \(\rightarrow\)\> (cdeab AND 11011) = 01100
+  \end{tabbing}
+\end{alltt}
+
+  \texttt{11011 AND 01100 = 01000}, so $x$ must be, where asterisk (*) is whichever, 00010.
+
+\item \begin{alltt}
+  \begin{tabbing}
+    \hphantom{\(\rightarrow\)}\= (00010 OR 10111 AND 11100) \\
+    \(\rightarrow\)\> (00010 OR 10100) \\
+    \(\rightarrow\)\> 10110
   \end{tabbing}
 \end{alltt}
 
