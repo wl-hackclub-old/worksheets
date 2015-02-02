@@ -93,7 +93,7 @@ Evaluate the following LISP code.
     \item The string ``?''.
     \end{inparaenum}
     \\
-    \texttt{(CONS (CAR b) (CDR b))}        & Creates the list \texttt{((what) "?")}. \\
+    \texttt{(CONS (CAR b) (CDR b))}        & Returns the list \texttt{((what) is a list "?")} (the exact same list). \\
     \texttt{(SETQ b (CONS (CAR (CAR b)) (CDR b)))} & Changes the value of the first element in \texttt{b} to the first element in the list \texttt{(what)}, the symbol \texttt{what}.
   \end{tabular}
 
@@ -102,8 +102,8 @@ Evaluate the following LISP code.
 \item ~ %% \vspace{-10pt}
   \\ \begin{tabular}{l p{4.2cm}}
     \texttt{(SET 'c '(21 22 23 50))} & Set variable \texttt{c} to list containing elements 21, 22, 23, and 50. \\
-    \texttt{(SETQ d (CONS 33 (CDR (CDR c)))} & Set variable \texttt{d} to list containing elements 33 and 50. \\
-    \texttt{(REVERSE d)} & Returns \texttt{(50 33)}.
+    \texttt{(SETQ d (CONS 33 (CDR (CDR c)))} & Set variable \texttt{d} to list containing elements 33, 23, and 50. \\
+    \texttt{(REVERSE d)} & Returns \texttt{(50 23 33)}.
   \end{tabular}
   
 \end{enumerate}
