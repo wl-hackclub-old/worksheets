@@ -1,6 +1,7 @@
 \documentclass[12pt,letterpaper]{article}
 
 \usepackage{amsmath}
+\usepackage{paralist}
 
 \begin{document}
 
@@ -33,24 +34,24 @@ Evaluate the following LISP code.
      (MULT 3 5))
 \end{verbatim}
 
-\item
+\item What is the final returned value of the program? 
 \begin{verbatim}
 (SETQ a 'hello)
 (ATOM a)
 \end{verbatim}
 
-\item
+\item What is the final value of \texttt{b} after this program is run?
 \begin{verbatim}
 (SETQ b '((what) is a list "?"))
 (CONS (CAR b) (CDR b))
-(SETQ (CAR b) (CAR (CAR b)))
+(SETQ b (CONS (CAR (CAR b)) (CDR b)))
 \end{verbatim}
 
-\item
+\item What is the final returned value of the program?
 \begin{verbatim}
 (SET 'c '(21 22 23 50))
-(SETQ (CDR (CDR c)) (CONS 33 NIL))
-(REVERSE c)
+(SETQ d (CONS 33 (CDR (CDR c)))
+(REVERSE d)
 \end{verbatim}
 
 \end{enumerate}
@@ -80,6 +81,29 @@ Evaluate the following LISP code.
   \\ \begin{tabular}{l l}
 \texttt{(SETQ a 'hello)} & Set variable \texttt{a} to symbol \texttt{hello}. \\
 \texttt{(ATOM a)}        & Returns true, since \texttt{a} is not a list.
+  \end{tabular}
+
+\item ~ %% \vspace{-10pt}
+  \\ \begin{tabular}{l p{3.2cm}}
+    \texttt{(SETQ b '((what) is a list "?"))} & Set variable \texttt{b} to list containing elements:
+    \begin{inparaenum}
+    \item A list containing one element, the symbol \texttt{what}.
+    \item The symbol \texttt{is}.
+    \item The symbol \texttt{list}.
+    \item The string ``?''.
+    \end{inparaenum}
+    \\
+    \texttt{(CONS (CAR b) (CDR b))}        & Creates the list \texttt{((what) "?")}. \\
+    \texttt{(SETQ b (CONS (CAR (CAR b)) (CDR b)))} & Changes the value of the first element in \texttt{b} to the first element in the list \texttt{(what)}, the symbol \texttt{what}.
+  \end{tabular}
+
+  Therefore, the value of \texttt{b} is \texttt{(what is a list "?")}.
+
+\item ~ %% \vspace{-10pt}
+  \\ \begin{tabular}{l p{4.2cm}}
+    \texttt{(SET 'c '(21 22 23 50))} & Set variable \texttt{c} to list containing elements 21, 22, 23, and 50. \\
+    \texttt{(SETQ d (CONS 33 (CDR (CDR c)))} & Set variable \texttt{d} to list containing elements 33 and 50. \\
+    \texttt{(REVERSE d)} & Returns \texttt{(50 33)}.
   \end{tabular}
   
 \end{enumerate}
