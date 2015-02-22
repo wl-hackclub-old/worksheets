@@ -15,3 +15,5 @@ What they translate to is below.
 * lisp &rarr; LISP Programming
 * pip &rarr; Prefix/Infix/Postfix Notation
 * bsf &rarr; Bit-String Flicking
+* boolean &rarr; Boolean Algebra
+* graph &rarr; Graph Theory
